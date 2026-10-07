@@ -1,0 +1,92 @@
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.time {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.imageWrapper {
+  aspect-ratio: 1 / 1;
+  background: #efefef;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px 4px;
+}
+
+.actionButton {
+  font-size: 24px;
+  line-height: 1;
+  transition: transform 0.1s;
+  padding: 0;
+}
+
+.actionButton:hover {
+  transform: scale(1.1);
+}
+
+.liked {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.likeCount {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.body {
+  padding: 4px 16px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.comments {
+  padding: 0 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.comment {
+  font-size: 13px;
+  line-height: 1.4;
+}

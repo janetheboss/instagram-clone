@@ -1,0 +1,12 @@
+.feed {
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+.empty {
+  text-align: center;
+  color: var(--color-text-secondary);
+  padding: 48px 24px;
+  max-width: 470px;
+  margin: 0 auto;
+}
