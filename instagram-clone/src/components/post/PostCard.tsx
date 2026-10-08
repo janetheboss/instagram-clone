@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { Post } from '../../types/Post';
 import { Avatar } from '../common/Avatar';
 import { formatRelativeTime } from '../../utils/formatDate';
@@ -25,9 +26,19 @@ export function PostCard({ post }: PostCardProps) {
   return (
     <article className={styles.card}>
       <header className={styles.header}>
-        <Avatar src={post.author.avatarUrl} alt={post.author.username} />
+        <Link
+          to={`/profile/${post.author.username}`}
+          className={styles.authorLink}
+        >
+          <Avatar src={post.author.avatarUrl} alt={post.author.username} />
+        </Link>
         <div className={styles.headerText}>
-          <span className={styles.username}>{post.author.username}</span>
+          <Link
+            to={`/profile/${post.author.username}`}
+            className={styles.authorLink}
+          >
+            <span className={styles.username}>{post.author.username}</span>
+          </Link>
           <span className={styles.time}>{formatRelativeTime(post.createdAt)}</span>
         </div>
       </header>
@@ -49,7 +60,12 @@ export function PostCard({ post }: PostCardProps) {
 
       <div className={styles.body}>
         <p>
-          <span className={styles.username}>{post.author.username}</span>{' '}
+          <Link
+            to={`/profile/${post.author.username}`}
+            className={styles.username}
+          >
+            {post.author.username}
+          </Link>{' '}
           {post.caption}
         </p>
       </div>
@@ -58,7 +74,12 @@ export function PostCard({ post }: PostCardProps) {
         <div className={styles.comments}>
           {post.comments.map((comment) => (
             <p key={comment.id} className={styles.comment}>
-              <span className={styles.username}>{comment.author.username}</span>{' '}
+              <Link
+                to={`/profile/${comment.author.username}`}
+                className={styles.username}
+              >
+                {comment.author.username}
+              </Link>{' '}
               {comment.text}
             </p>
           ))}

@@ -5,7 +5,7 @@ import styles from './CreatePostForm.module.css';
 
 interface CreatePostFormProps {
   currentUser: User;
-  onCreate: (post: Post) => void;
+  onCreate: (draft: Omit<Post, 'id' | 'createdAt'>) => void;
 }
 
 export function CreatePostForm({ currentUser, onCreate }: CreatePostFormProps) {
